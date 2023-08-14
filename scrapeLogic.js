@@ -10,6 +10,7 @@ function delay(time) {
 const scrapeLogic = async (req, res) => {
   if (!req.body && !req.body.text && req.body.text.trim() === '') {
     res.send({ error: "No text sended!", ok: false });
+    console.error("No text sended!");
     return;
   }
 
@@ -68,6 +69,7 @@ const scrapeLogic = async (req, res) => {
       || !paraphraseText.length
       || paraphraseText === wrongOutput
       || paraphraseText === text) {
+      console.error("No text found!");
       res.status(500).json({ error: "No text found", ok: false });
       return;
     }
