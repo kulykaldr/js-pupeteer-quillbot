@@ -1,0 +1,9 @@
+GET http://localhost:4000/check/
+
+###
+POST http://localhost:4000/paraphrase
+Content-Type: application/json
+
+{
+  "text": "This property is an object containing a property for each query string parameter in the route."
+}
