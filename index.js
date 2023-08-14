@@ -10,7 +10,7 @@ app.post("/paraphrase", (req, res) => {
   scrapeLogic(req, res);
 });
 
-app.get("/check", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Render Puppeteer server is up and running!");
 });
 
