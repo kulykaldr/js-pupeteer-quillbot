@@ -7,3 +7,11 @@ Content-Type: application/json
 {
   "text": "This property is an object containing a property for each query string parameter in the route."
 }
+
+###
+POST https://puppeteer-quillbot.onrender.com/paraphrase
+Content-Type: application/json
+
+{
+  "text": "This property is an object containing a property for each query string parameter in the route."
+}
