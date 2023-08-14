@@ -31,9 +31,11 @@ const scrapeLogic = async (req, res) => {
         : puppeteer.executablePath(),
   });
   try {
+    await delay(2000);
     const page = await browser.newPage();
+    await delay(2000);
 
-    await page.goto("https://quillbot.com/");
+    await page.goto("https://quillbot.com/", { waitUntil: "networkidle2" });
 
     // Set screen size
     await page.setViewport({ width: 1024, height: 768 });
