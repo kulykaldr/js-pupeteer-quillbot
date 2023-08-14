@@ -18,7 +18,7 @@ const scrapeLogic = async (req, res) => {
 
   const browser = await puppeteer.launch({
     // headless: false,
-    headless: 'new',
+    headless: process.env.NODE_ENV === "production" ? 'new' : false,
     args: [
       "--disable-setuid-sandbox",
       "--no-sandbox",
@@ -35,7 +35,7 @@ const scrapeLogic = async (req, res) => {
     const page = await browser.newPage();
     await delay(2000);
 
-    await page.goto("https://quillbot.com/", { waitUntil: "networkidle2" });
+    await page.goto("https://quillbot.com/", { waitUntil: "networkidle0" });
 
     // Set screen size
     await page.setViewport({ width: 1024, height: 768 });
